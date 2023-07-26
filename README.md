@@ -15,6 +15,7 @@ I currently only experiment after converting the ros2 bag format from the M2DGR 
 https://github.com/Taeyoung96/FAST_LIO_ROS2/assets/41863759/27393bf1-740b-4347-ba8f-4c2170e50e11
 
 
+<p align="center"><img src="https://github.com/Taeyoung96/FAST_LIO_ROS2/assets/41863759/c797fb90-8a10-47b2-af8e-f5bc87e3cc89" width = "700" ></p>  
 
 
 
