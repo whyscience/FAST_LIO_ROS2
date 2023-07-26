@@ -3,8 +3,14 @@
 > Modifier: Taeyoung Kim
 
 ## What's New?  
+- Add save trajectory function  
 
 
+## How to use
+
+```
+git clone --recursive https://github.com/Taeyoung96/FAST_LIO_ROS2.git
+```
 
 
 ## 6.Acknowledgments
