@@ -126,6 +126,9 @@ cd src/livox_ros_driver2/
 ./build.sh humble
 ```
 This process only needs to be done once, after connecting to the container.  
+For all subsequent builds, simply proceed to `colcon build` on `ros2_ws`.
+
+
 
 For launch fast_lio ros2 version for M2DGR.  
 ```
