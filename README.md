@@ -9,7 +9,7 @@
 - Add save map function without service callback
 
 ## Results
-I only experiment after converting the ros2 bag to M2DGR.  
+I currently only experiment after converting the ros2 bag format from the M2DGR dataset.  
 
 
 https://github.com/Taeyoung96/FAST_LIO_ROS2/assets/41863759/27393bf1-740b-4347-ba8f-4c2170e50e11
