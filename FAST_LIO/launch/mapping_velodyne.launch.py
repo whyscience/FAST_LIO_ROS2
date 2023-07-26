@@ -17,14 +17,14 @@ def generate_launch_description():
     feature_extract_enable_param = LaunchConfiguration('feature_extract_enable', default='false') # bool
     point_filter_num_param = LaunchConfiguration('point_filter_num', default='4')                 # int
     max_iteration_param = LaunchConfiguration('max_iteration', default='3')                       # int
-    filter_size_surf_param = LaunchConfiguration('filter_size_surf', default='1.0')               # double
-    filter_size_map_param = LaunchConfiguration('filter_size_map', default='1.0')                 # double
+    filter_size_surf_param = LaunchConfiguration('filter_size_surf', default='0.5')               # double
+    filter_size_map_param = LaunchConfiguration('filter_size_map', default='0.5')                 # double
     cube_side_length_param = LaunchConfiguration('cube_side_length', default='1000.0')            # double
-    runtime_pos_log_enable_param = LaunchConfiguration('runtime_pos_log_enable', default='true')  # bool
+    runtime_pos_log_enable_param = LaunchConfiguration('runtime_pos_log_enable', default='false')  # bool
 
-    default_config_path = os.path.join(package_path, 'config', 'm2dgr.yaml')
+    default_config_path = os.path.join(package_path, 'config', 'velodyne.yaml')
     default_rviz_config_path = os.path.join(
-        package_path, 'rviz_cfg', 'm2dgr.rviz')
+        package_path, 'rviz_cfg', 'fastlio.rviz')
 
 
     use_sim_time = LaunchConfiguration('use_sim_time')

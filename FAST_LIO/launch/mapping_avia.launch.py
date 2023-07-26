@@ -6,15 +6,25 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import IfCondition
-
 from launch_ros.actions import Node, SetUseSimTime
 
 
 def generate_launch_description():
     package_path = get_package_share_directory('fast_lio')
-    default_config_path = os.path.join(package_path, 'config', 'mid360.yaml')
+
+    # Create LaunchConfigurations for the parameters with default values (not in config file)
+    feature_extract_enable_param = LaunchConfiguration('feature_extract_enable', default='false') # bool
+    point_filter_num_param = LaunchConfiguration('point_filter_num', default='3')                 # int
+    max_iteration_param = LaunchConfiguration('max_iteration', default='3')                       # int
+    filter_size_surf_param = LaunchConfiguration('filter_size_surf', default='0.5')               # double
+    filter_size_map_param = LaunchConfiguration('filter_size_map', default='0.5')                 # double
+    cube_side_length_param = LaunchConfiguration('cube_side_length', default='1000.0')            # double
+    runtime_pos_log_enable_param = LaunchConfiguration('runtime_pos_log_enable', default='false')  # bool
+
+    default_config_path = os.path.join(package_path, 'config', 'avia.yaml')
     default_rviz_config_path = os.path.join(
-        package_path, 'rviz', 'fastlio.rviz')
+        package_path, 'rviz_cfg', 'fastlio.rviz')
+
 
     use_sim_time = LaunchConfiguration('use_sim_time')
     config_path = LaunchConfiguration('config_path')
@@ -42,7 +52,14 @@ def generate_launch_description():
         package='fast_lio',
         executable='fastlio_mapping',
         parameters=[config_path,
-                    {'use_sim_time': use_sim_time}],
+                    {'use_sim_time': use_sim_time,
+                    'feature_extract_enable': feature_extract_enable_param,
+                    'point_filter_num': point_filter_num_param,
+                    'max_iteration': max_iteration_param,
+                    'filter_size_surf': filter_size_surf_param,
+                    'filter_size_map': filter_size_map_param,
+                    'cube_side_length': cube_side_length_param,
+                    'runtime_pos_log_enable': runtime_pos_log_enable_param}],
         output='screen'
     )
     rviz_node = Node(
