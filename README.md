@@ -113,6 +113,12 @@ cd src/livox_ros_driver2/
 This process only needs to be done once, after connecting to the container.  
 For all subsequent builds, simply proceed to `colcon build` on `ros2_ws`.
 
+```
+cd ~/ros2_ws/
+```
+```
+source install/setup.bash 
+```
 
 
 For launch fast_lio ros2 version for M2DGR.  
