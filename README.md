@@ -58,34 +58,17 @@ xhost +local:docker
 After that, make your own container with the command below.  
 
 ```
-nvidia-docker run --privileged -it \
-           -e NVIDIA_DRIVER_CAPABILITIES=all \
-           -e NVIDIA_VISIBLE_DEVICES=all \
-           --volume=${fast_lio_ros2_repo_root}:/root/ros2_ws/src \
-           --volume=/tmp/.X11-unix:/tmp/.X11-unix:rw \
-           --net=host \
-           --ipc=host \
-           --name=${docker container name} \
-           --env="DISPLAY=$DISPLAY" \
-           ${docker image} /bin/bash
+sudo chmod -R 777 container_run.sh
+```
+```
+./container_run.sh <container_name> <image_name:tag>
 ```
 
-:warning: **You should change {fast_lio_ros2_repo_root}, {docker container name}, {docker image} to suit your environment.**  
+:warning: **You should change {container_name}, {docker image} to suit your environment.**  
 
 For example,  
 ```
-nvidia-docker run --privileged -it \
-           -e NVIDIA_DRIVER_CAPABILITIES=all \
-           -e NVIDIA_VISIBLE_DEVICES=all \
-           --volume=/home/taeyoung/Desktop/FAST_LIO_ROS2:/root/ros2_ws/src \
-           --volume=/data/LIDAR_dataset:/root/data \
-           --volume=/tmp/.X11-unix:/tmp/.X11-unix:rw \
-           --net=host \
-           --ipc=host \
-           --shm-size=2g \
-           --name=fast-lio-ros2 \
-           --env="DISPLAY=$DISPLAY" \
-           fast-lio-ros2:latest /bin/bash
+ ./container_run.sh fast-lio-ros2 fast-lio-ros2:latest
 ```
 In my case, I also shared an additional `/data` folder to run the ROS2 bag files.  
 
@@ -94,6 +77,7 @@ If you have successfully created the docker container, the terminal output will 
 **output** :  
 
 ```
+Current working directory: /home/taeyoung/Desktop/FAST_LIO_ROS2
 ================FAST-LIO ROS2 Docker Env Ready================
 root@taeyoung-cilab:~/ros2_ws#
 ```
