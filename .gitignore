@@ -8,3 +8,8 @@ Log/*.pdf
 PCD/*.pcd
 /FAST_LIO/cmake-build-debug/
 /FAST_LIO/.idea/
+FAST_LIO/Log/imu.txt
+FAST_LIO/Log/dbg.txt
+FAST_LIO/Log/mat_out.txt
+FAST_LIO/Log/mat_pre.txt
+FAST_LIO/Log/pos_log.txt
