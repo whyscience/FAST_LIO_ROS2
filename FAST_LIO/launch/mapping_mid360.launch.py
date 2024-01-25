@@ -28,6 +28,7 @@ def generate_launch_description():
 
 
     use_sim_time = LaunchConfiguration('use_sim_time')
+    use_sim_time = False
     config_path = LaunchConfiguration('config_path')
     rviz_use = LaunchConfiguration('rviz')
     rviz_cfg = LaunchConfiguration('rviz_cfg')

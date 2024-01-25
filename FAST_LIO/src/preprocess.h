@@ -17,7 +17,7 @@ enum LID_TYPE
   VELO16,
   OUST64,
   MID360
-};  //{1, 2, 3}
+};  //{1, 2, 3, 4}
 enum TIME_UNIT
 {
   SEC = 0,
@@ -118,7 +118,7 @@ typedef struct {
   float x;            /**< X axis, Unit:m */
   float y;            /**< Y axis, Unit:m */
   float z;            /**< Z axis, Unit:m */
-  float reflectivity; /**< Reflectivity   */
+  float intensity; /**< intensity   */
   uint8_t tag;        /**< Livox point tag   */
   uint8_t line;       /**< Laser line id     */
 } LivoxPointXyzrtl;
@@ -127,7 +127,7 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(livox_ros::LivoxPointXyzrtl,
     (float, x, x)
     (float, y, y)
     (float, z, z)
-    (float, reflectivity, reflectivity)
+    (float, intensity, intensity)
     (uint8_t, tag, tag)
     (uint8_t, line, line)
 )
