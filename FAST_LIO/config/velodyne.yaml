@@ -34,7 +34,7 @@
             scan_bodyframe_pub_en: true  # true: output the point cloud scans in IMU-body-frame
 
         # when you use docker, you should enter the absolute path of in docker container
-        map_file_path: "/home/up2/ws_fast_lio2/src/FAST_LIO_ROS2/FAST_LIO/PCD/result.pcd" 
+        map_file_path: "PCD/result.pcd"
         pcd_save:
             pcd_save_en: false
             interval: -1                 # how many LiDAR frames saved in each pcd file; 
@@ -42,4 +42,4 @@
         
         traj_save:
             traj_save_en: false
-            traj_file_path: "/home/up2/ws_fast_lio2/src/FAST_LIO_ROS2/FAST_LIO/traj/trajectory.txt" # when you use docker, you should enter the absolute path of in docker container
+            traj_file_path: "traj/trajectory.txt" # when you use docker, you should enter the absolute path of in docker container
