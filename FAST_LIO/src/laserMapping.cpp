@@ -147,8 +147,8 @@ shared_ptr<ImuProcess> p_imu(new ImuProcess());
 
 //string frame_id = "camera_init";
 //string child_frame_id = "body";
-string frame_id = "map";
-string child_frame_id = "odom";
+string frame_id = "odom_combined";
+string child_frame_id = "base_footprint";
 
 void SigHandle(int sig)
 {
