@@ -190,6 +190,8 @@ void Preprocess::avia_handler(const livox_ros_driver2::msg::CustomMsg::UniquePtr
         }
       }
     }
+    //std::cout << "msg->points: " << msg->points.size() << ", pl_surf = " << pl_surf.size() << std::endl;
+    // pub_func(pl_surf, pub_full, msg->header.stamp);
   }
 }
 

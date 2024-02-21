@@ -13,7 +13,7 @@ def generate_launch_description():
 
     # Create LaunchConfigurations for the parameters with default values (not in config file)
     feature_extract_enable_param = LaunchConfiguration('feature_extract_enable', default='false')  # bool
-    point_filter_num_param = LaunchConfiguration('point_filter_num', default='3')  # int
+    point_filter_num_param = LaunchConfiguration('point_filter_num', default='3')  # int try 1
     max_iteration_param = LaunchConfiguration('max_iteration', default='3')  # int
     filter_size_surf_param = LaunchConfiguration('filter_size_surf', default='0.5')  # double
     filter_size_map_param = LaunchConfiguration('filter_size_map', default='0.5')  # double
@@ -25,6 +25,7 @@ def generate_launch_description():
         package_path, 'rviz_cfg', 'fastlio.rviz')
 
     use_sim_time = LaunchConfiguration('use_sim_time')
+    # use_sim_time = True
     config_path = LaunchConfiguration('config_path')
     rviz_use = LaunchConfiguration('rviz')
     rviz_cfg = LaunchConfiguration('rviz_cfg')
